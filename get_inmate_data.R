@@ -208,7 +208,7 @@ saveRDS(floridainmates, "floridainmates.rds", compress = "bzip2")
 # bump version
 read.dcf("DESCRIPTION") %>%
     as_data_frame %>%
-    mutate(Version = format(strtoi(Version) + 1, nsmall = 1)) %>%
+    mutate(Version = format(as.numeric(Version) + 1, nsmall = 1)) %>%
     write.dcf("DESCRIPTION")
 
 # release new version of data on GH
