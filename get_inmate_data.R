@@ -201,6 +201,8 @@ system.time({
 
 })
 
+### save data and upload to GH as release
+
 saveRDS(floridainmates, "floridainmates.rds", compress = "bzip2")
 
 # bump version
@@ -211,3 +213,8 @@ read.dcf("DESCRIPTION") %>%
 
 # release new version of data on GH
 floridainmates::mydata_release("refresh data", filename = "floridainmates.rds")
+
+# process to get data:
+# devtools::install_github("madams1/floridainmates")
+# devtools::install_github("richfitz/datastorr")
+# my_data <- floridainmates::mydata()
