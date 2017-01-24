@@ -211,6 +211,9 @@ read.dcf("DESCRIPTION") %>%
     mutate(Version = format(as.numeric(Version) + 1, nsmall = 1)) %>%
     write.dcf("DESCRIPTION")
 
+# commit changes to DESCRIPTION
+system("git add DESCRIPTION && git commit -m 'bump version' && git push")
+
 # release new version of data on GH
 floridainmates::mydata_release("refresh data", filename = "floridainmates.rds", yes = TRUE)
 
