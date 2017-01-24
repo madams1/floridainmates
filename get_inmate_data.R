@@ -212,7 +212,7 @@ read.dcf("DESCRIPTION") %>%
     write.dcf("DESCRIPTION")
 
 # release new version of data on GH
-floridainmates::mydata_release("refresh data", filename = "floridainmates.rds")
+floridainmates::mydata_release("refresh data", filename = "floridainmates.rds", yes = TRUE)
 
 # process to get data:
 # devtools::install_github("madams1/floridainmates")
