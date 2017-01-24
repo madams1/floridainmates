@@ -1,10 +1,12 @@
 Package: floridainmates
-Title: What the Package Does (one line, title case)
-Version: 1.0
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Data on Florida's Inmate Population
+Version: 2.0
+Authors@R: person("Matt", "Adams", email = "adams.matt.01@gmail.com", role = c("aut", "cre"))
+Description: Data on Florida's Inmate Population collected from http://www.dc.state.fl.us
 Depends: R (>= 3.3.2)
-License: What license is it under?
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 5.0.1
+URL: https://github.com/madams1/floridainmates
+BugReports: https://github.com/madams1/floridainmates/issues
