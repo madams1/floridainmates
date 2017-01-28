@@ -31,10 +31,16 @@ release_new_data <- function() {
         discard_errors %>%
         bind_rows %>%
         mutate(
-            weight = readr::parse_number(weight),
+            weight_lbs = readr::parse_number(weight),
             height_inches = calc_inches_height(height)
         ) %>%
+        left_join(all_inmates) %>%
         select(
+            dc_number,
+            county_of_commitment,
+            name:weight_lbs,
+            height_inches,
+            everything(),
             -special_note,
             -height
         )
