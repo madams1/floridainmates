@@ -24,7 +24,7 @@ release_new_data <- function() {
     # get all inmate data
     floridainmates <-
         mclapply(
-            all_inmates[["dc_number"]][1:5],
+            all_inmates[["dc_number"]],
             get_inmate_data %>% safely,
             mc.cores = detectCores()
         ) %>%
