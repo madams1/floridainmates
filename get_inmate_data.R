@@ -69,7 +69,7 @@ release_new_data <- function() {
     system("git add DESCRIPTION && git commit -m 'bump version' && git push")
 
     # release new version of data on GH
-    floridainmates::mydata_release("refresh data", filename = "floridainmates.rds", yes = TRUE)
+    floridainmates::floridainmates_release("refresh data", filename = "floridainmates.rds", yes = TRUE)
 }
 
 system.time(release_new_data())
