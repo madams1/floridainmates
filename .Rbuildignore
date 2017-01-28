@@ -1,2 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+floridainmates.rds
+get_inmate_data.R
+R/get_data_functions.R
+R/helper_functions.R
