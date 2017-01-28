@@ -24,25 +24,36 @@ release_new_data <- function() {
     # get all inmate data
     floridainmates <-
         mclapply(
-            all_inmates[["dc_number"]],
+            all_inmates[["dc_number"]][1:5],
             get_inmate_data %>% safely,
             mc.cores = detectCores()
         ) %>%
         discard_errors %>%
         bind_rows %>%
         mutate(
-            weight_lbs = readr::parse_number(weight),
-            height_inches = calc_inches_height(height)
+            weight = readr::parse_number(weight),
+            height = calc_inches_height(height),
+            birth_date = mdy(birth_date),
+            initial_receipt_date = mdy(initial_receipt_date),
+            current_release_notes = ifelse(
+                stringr::str_detect(current_release_date, "^[:alpha:]"),
+                current_release_date,
+                NA
+            ),
+            current_release_date = mdy(current_release_date)
+        ) %>%
+        rename(
+            weight_lbs = weight,
+            height_inches = height
         ) %>%
         left_join(all_inmates) %>%
         select(
             dc_number,
             county_of_commitment,
-            name:weight_lbs,
-            height_inches,
+            name:current_release_date,
+            current_release_notes,
             everything(),
-            -special_note,
-            -height
+            -special_note
         )
 
     # save data
