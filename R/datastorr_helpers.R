@@ -16,12 +16,12 @@
 ##'   use a different path).
 ##'
 ##' @export
-mydata <- function(version=NULL, path=NULL) {
-    datastorr::github_release_get(mydata_info(path), version)
+floridainmates <- function(version=NULL, path=NULL) {
+    datastorr::github_release_get(floridainmates_info(path), version)
 }
 
 ##' @export
-##' @rdname mydata
+##' @rdname floridainmates
 ##'
 ##' @param local Logical indicating if local or github versions should
 ##'   be polled.  With any luck, \code{local=FALSE} is a superset of
@@ -29,24 +29,24 @@ mydata <- function(version=NULL, path=NULL) {
 ##'   \code{TRUE}, but there are no local versions, then we do check
 ##'   for the most recent github version.
 ##'
-mydata_versions <- function(local=TRUE, path=NULL) {
-    datastorr::github_release_versions(mydata_info(path), local)
+floridainmates_versions <- function(local=TRUE, path=NULL) {
+    datastorr::github_release_versions(floridainmates_info(path), local)
 }
 
 ##' @export
-##' @rdname mydata
-mydata_version_current <- function(local=TRUE, path=NULL) {
-    datastorr::github_release_version_current(mydata_info(path), local)
+##' @rdname floridainmates
+floridainmates_version_current <- function(local=TRUE, path=NULL) {
+    datastorr::github_release_version_current(floridainmates_info(path), local)
 }
 
 ##' @export
-##' @rdname mydata
-mydata_del <- function(version, path=NULL) {
-    datastorr::github_release_del(mydata_info(path), version)
+##' @rdname floridainmates
+floridainmates_del <- function(version, path=NULL) {
+    datastorr::github_release_del(floridainmates_info(path), version)
 }
 
 ## Core data:
-mydata_info <- function(path) {
+floridainmates_info <- function(path) {
     datastorr::github_release_info("madams1/floridainmates",
                                    filename=NULL,
                                    read=readRDS,
@@ -62,6 +62,6 @@ mydata_info <- function(path) {
 ##' @param ... Parameters passed through to \code{\link{github_release_create}}
 ##' @param path Path to the data (see \code{\link{floridainmates}}).
 ##' @export
-mydata_release <- function(..., path=NULL) {
-    datastorr::github_release_create(mydata_info(path), ...)
+floridainmates_release <- function(..., path=NULL) {
+    datastorr::github_release_create(floridainmates_info(path), ...)
 }
