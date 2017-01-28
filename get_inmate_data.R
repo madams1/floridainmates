@@ -59,11 +59,8 @@ release_new_data <- function() {
     # save data
     saveRDS(floridainmates, "floridainmates.rds", compress = "bzip2")
 
-    # bump version
-    read.dcf("DESCRIPTION") %>%
-        as_data_frame %>%
-        mutate(Version = format(as.numeric(Version) + 1, nsmall = 1)) %>%
-        write.dcf("DESCRIPTION")
+    # bump version to new minor version
+    bump_version() # defined in R/helper_functions.R
 
     # commit changes to DESCRIPTION
     system("git add DESCRIPTION && git commit -m 'bump version' && git push")

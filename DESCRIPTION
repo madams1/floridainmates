@@ -1,6 +1,6 @@
 Package: floridainmates
 Title: Data on Florida's Inmate Population
-Version: 4.0
+Version: 0.0.0
 Authors@R: person("Matt", "Adams", email = "adams.matt.01@gmail.com", role = c("aut", "cre"))
 Description: Data on Florida's Inmate Population collected from http://www.dc.state.fl.us.
 Depends: R (>= 3.3.2)
