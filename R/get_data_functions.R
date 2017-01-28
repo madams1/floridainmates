@@ -124,7 +124,7 @@ get_inmate_data <- function(dc_num) {
             incarceration_history = get_table("Incarceration"),
             sentence_history = get_table("Sentence History"),
             prison_history = get_table("Prior Prison"),
-            scars_marks_tatoos = get_table("Scars, Marks")
+            scars_marks_tattoos = get_table("Scars, Marks")
         )
 
     inmate_data
